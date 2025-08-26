@@ -1,43 +1,27 @@
-<section class="gift-banner relative bg-white">
+<section class="gift-banner">
   <!-- Top info bar -->
-  <div class="info-bar flex justify-between items-center px-6 py-3 text-sm border-b border-gray-200">
+  <div class="info-bar">
     <span>{{ section.settings.top_message }}</span>
-    <a href="{{ section.settings.top_button_link }}" 
-       class="top-button bg-yellow-300 px-4 py-2 font-medium text-black inline-flex items-center hover:bg-yellow-400 transition">
-      {{ section.settings.top_button_text }}
-      <span class="ml-2">→</span>
+    <a href="{{ section.settings.top_button_link }}" class="top-button">
+      {{ section.settings.top_button_text }} <span>→</span>
     </a>
   </div>
 
-  <!-- Main content with background -->
-  <div class="banner-content relative text-center py-20"
-       style="background-image: url({{ section.settings.bg_image | image_url }}); background-repeat: no-repeat; background-size: cover;">
-    <h1 class="text-5xl font-bold mb-4">{{ section.settings.heading }}</h1>
-    <p class="text-lg max-w-2xl mx-auto mb-6">{{ section.settings.subheading }}</p>
-    <a href="{{ section.settings.main_button_link }}"
-       class="main-button border border-black px-6 py-3 font-semibold inline-flex items-center hover:bg-black hover:text-white transition">
-      {{ section.settings.main_button_text }}
-      <span class="ml-2">→</span>
+  <!-- Main content -->
+  <div class="banner-content" 
+       style="background-image: url({{ section.settings.bg_image | image_url }});">
+    <h1>{{ section.settings.heading }}</h1>
+    <p>{{ section.settings.subheading }}</p>
+    <a href="{{ section.settings.main_button_link }}" class="main-button">
+      {{ section.settings.main_button_text }} <span>→</span>
     </a>
   </div>
 
-  <!-- Bottom strip -->
-  <div class="bottom-bar text-center text-xs py-3 border-t border-gray-200">
+  <!-- Bottom bar -->
+  <div class="bottom-bar">
     {{ section.settings.bottom_message }}
   </div>
 </section>
-
-<style>
-.gift-banner .top-button:hover {
-  transform: scale(1.05);
-}
-.gift-banner .main-button:hover {
-  transform: scale(1.05);
-}
-.gift-banner .main-button:active {
-  transform: scale(0.95);
-}
-</style>
 
 {% schema %}
 {
