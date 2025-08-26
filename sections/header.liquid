@@ -8,22 +8,14 @@
     </a>
   </div>
 
-  <!-- Background image placed below header -->
-  <div class="banner-wrapper">
-    <div class="banner-image">
-      {% if section.settings.bg_image %}
-        <img src="{{ section.settings.bg_image | image_url }}" alt="Gift Guide Background" />
-      {% endif %}
-    </div>
-
-    <!-- Left-aligned content -->
-    <div class="banner-content">
-      <h1>{{ section.settings.heading }}</h1>
-      <p>{{ section.settings.subheading }}</p>
-      <a href="{{ section.settings.main_button_link }}" class="main-button">
-        {{ section.settings.main_button_text }} <span>→</span>
-      </a>
-    </div>
+  <!-- Main content -->
+  <div class="banner-content" 
+       style="background-image: url({{ section.settings.bg_image | image_url }});">
+    <h1>{{ section.settings.heading }}</h1>
+    <p>{{ section.settings.subheading }}</p>
+    <a href="{{ section.settings.main_button_link }}" class="main-button">
+      {{ section.settings.main_button_text }} <span>→</span>
+    </a>
   </div>
 
   <!-- Bottom bar -->
@@ -57,7 +49,7 @@
     {
       "type": "image_picker",
       "id": "bg_image",
-      "label": "Background Image"
+      "label": "Background Illustration"
     },
     {
       "type": "text",
@@ -97,3 +89,4 @@
   ]
 }
 {% endschema %}
+
