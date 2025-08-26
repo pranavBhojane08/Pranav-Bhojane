@@ -1,6 +1,5 @@
 {{ 'banner.css' | asset_url | stylesheet_tag }}
 
-
 <section class="gift-banner">
   <!-- Top info bar -->
   <div class="info-bar">
@@ -13,7 +12,9 @@
   <!-- Background image placed below header -->
   <div class="banner-wrapper">
     <div class="banner-image">
-      <img src="https://img.notionusercontent.com/s3/prod-files-secure%2F6d6a0fbb-9f61-4470-9974-4a151dbcccc5%2F0e5fc7cb-8299-4d12-a002-571ad17ad0ef%2FUntitled.png/size/w=1630?exp=1756289882&sig=VKxb5i4giQjVN3cFY7_zo3kz4m5fnARa2eyadTNkzvg&id=524990fd-a3f9-4b7a-8698-b7a0a169c874&table=block" alt="Gift Guide Background" />
+      {% if section.settings.bg_image %}
+        <img src="https://pranavbhojane-portfolio.netlify.app/css/img/1728757893749.jpg" alt="Gift Guide Background" />
+      {% endif %}
     </div>
 
     <!-- Left-aligned content -->
@@ -53,6 +54,11 @@
       "id": "top_button_link",
       "label": "Top Button Link",
       "default": "#"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background Image"
     },
     {
       "type": "text",
