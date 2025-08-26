@@ -1,5 +1,4 @@
 {{ 'banner.css' | asset_url | stylesheet_tag }}
-
 <section class="gift-banner">
   <!-- Top info bar -->
   <div class="info-bar">
@@ -13,7 +12,7 @@
   <div class="banner-wrapper">
     <div class="banner-image">
       {% if section.settings.bg_image %}
-        <img src="https://pranavbhojane-portfolio.netlify.app/css/img/1728757893749.jpg" alt="Gift Guide Background" />
+        <img src="{{ section.settings.bg_image | image_url }}" alt="Gift Guide Background" />
       {% endif %}
     </div>
 
